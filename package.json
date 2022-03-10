@@ -10,7 +10,8 @@
     "transpile": "tsc",
     "build": "tsc",
     "start": "node ./build/app.js",
-    "start-prod": "node ./build/app.js"
+    "start-prod": "node ./build/app.js",
+    "pretty": "prettier --write \"src/**/*.ts\""
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "discord-api-types": "^0.28.0",
     "discord.js": "^13.6.0",
     "dotenv": "^16.0.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
   }
 }

@@ -26,7 +26,7 @@
 ### Command
 
 ```!citation```</br>
-Le bot vous enverras une citation</br>
+The bot will send you a quote</br>
 ```!random min max```</br>
 The bot will send you a number between the minimum and maximum request (min and max will be filled by the user)</br>
 ```!note firstname```</br>

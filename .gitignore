@@ -1,4 +1,5 @@
 build
 node_modules
 vcs.xml
+prettier.xml
 .env

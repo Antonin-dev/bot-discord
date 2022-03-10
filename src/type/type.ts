@@ -1,17 +1,15 @@
 export interface Config {
-    sentenceOfTheDay : string
+  sentenceOfTheDay: string;
 }
 
 export interface Log {
-    randomBegin : string,
-    citationBegin: string,
-    mentionBegin: string
+  randomBegin: string;
+  citationBegin: string;
+  mentionBegin: string;
 }
 
 export interface Actions {
-    citation : string,
-    random: string,
-    note: string
+  citation: string;
+  random: string;
+  note: string;
 }
-
-
