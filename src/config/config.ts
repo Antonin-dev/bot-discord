@@ -14,6 +14,12 @@ export const config :Config = {
 
 export const log : Log = {
   randomBegin : 'sequence random begin',
-  hiBegin : 'sequence salut begin',
+  citationBegin : 'sequence citation begin',
   mentionBegin : 'sequence mention begin'
+}
+
+export const actions = {
+  citation : "!citation",
+  random: "!random",
+  note: "!note"
 }

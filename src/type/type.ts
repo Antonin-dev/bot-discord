@@ -4,7 +4,7 @@ export interface Config {
 
 export interface Log {
     randomBegin : string,
-    hiBegin: string,
+    citationBegin: string,
     mentionBegin: string
 }
 

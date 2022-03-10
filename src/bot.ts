@@ -1,5 +1,5 @@
 import {Client, Intents, Message} from "discord.js"
-import {randomSentence, config, log} from "./config/config";
+import {randomSentence, config, log, actions} from "./config/config";
 import {Config} from "./type/type";
 require('dotenv').config();
 
@@ -8,11 +8,13 @@ export class DiscordTs {
     private client: Client;
     private randomSentence: String[];
     private config: Config;
+    private actions: any;
 
     constructor(){
         this.client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
         this.randomSentence = randomSentence;
         this.config = config;
+        this.actions = actions;
     }
 
     public start(): void {
@@ -25,13 +27,20 @@ export class DiscordTs {
                     console.log(log.mentionBegin);
                     message.channel.send("Qui me parle ?!");
                 }
-                else if (message.content.startsWith("!salut")){
-                    console.log(log.hiBegin);
+                else if (message.content.startsWith(this.actions.citation)){
+                    console.log(log.citationBegin);
                     message.channel.send(`${this.config.sentenceOfTheDay} ${this.randomSentence[Math.floor(Math.random() * (this.randomSentence.length - 0))]}`);
-                }else if (message.content.startsWith("!random")){
-                    console.log(log.randomBegin);
+                }else if (message.content.startsWith(this.actions.random)){
                     const [command, min, max] = message.content.split(" ");
                     message.channel.send(this.formatRandomNumber(Number(min), Number(max)));
+                }else if (message.content.startsWith(this.actions.note)){
+                    const [command, firstname] = message.content.split(" ");
+                    if (firstname === "Antonin"){
+                        message.channel.send(`${firstname} mérite clairement un 20/20`);
+                    }else{
+                        message.channel.send(`${firstname} a copié sur Antonin il/elle mérite un 0/20`);
+                    }
+
                 }
             }
         })
