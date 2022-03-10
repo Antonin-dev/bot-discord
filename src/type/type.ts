@@ -8,4 +8,10 @@ export interface Log {
     mentionBegin: string
 }
 
+export interface Actions {
+    citation : string,
+    random: string,
+    note: string
+}
+
 

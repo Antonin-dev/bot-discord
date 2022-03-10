@@ -1,4 +1,4 @@
-import {Config, Log} from "../type/type";
+import {Actions, Config, Log} from "../type/type";
 
 export const randomSentence = [
   "Vous n'avez jamais vu votre vrai visage, seulement des photos et votre reflet.",
@@ -18,7 +18,7 @@ export const log : Log = {
   mentionBegin : 'sequence mention begin'
 }
 
-export const actions = {
+export const actions: Actions = {
   citation : "!citation",
   random: "!random",
   note: "!note"
